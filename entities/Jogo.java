@@ -5,6 +5,7 @@ public class Jogo {
 
 	public Jogo() {
 		for(int i = 0 ; i < pecas.length; i++) {
+			//incia o jogo, cada "_" é um espaço vazio no jogo
 			for(int j = 0; j < pecas[0].length; j++) {
 				pecas[i][j] = "_";
 			}
