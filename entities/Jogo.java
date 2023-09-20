@@ -1,19 +1,19 @@
 package entities;
 
 public class Jogo {
-	String[][] pecas = new String[3][3];
+	private String[][] pecas = new String[3][3];
 
 	public Jogo() {
-		for(int i = 0 ; i < pecas.length; i++) {
-			//incia o jogo, cada "_" é um espaço vazio no jogo
-			for(int j = 0; j < pecas[0].length; j++) {
+		for (int i = 0; i < pecas.length; i++) {
+			// incia o jogo, cada "_" é um espaço vazio no jogo
+			for (int j = 0; j < pecas[0].length; j++) {
 				pecas[i][j] = "_";
 			}
 		}
 	}
 
 	public void xJoga() {
-
+		System.out.println();
 	}
 
 	public void bJoga() {
@@ -44,6 +44,18 @@ public class Jogo {
 
 	public String[][] getPecas() {
 		return pecas;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < getPecas().length; i++) {
+			for (int j = 0; j < getPecas()[0].length; j++) {
+				sb.append(pecas[i][j] + " ");
+			}
+			sb.append("\n");
+		}
+		return sb.toString();
 	}
 
 }
