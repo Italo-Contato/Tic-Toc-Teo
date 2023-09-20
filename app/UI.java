@@ -1,7 +1,9 @@
 package app;
 
+import entities.Jogo;
+
 public class UI {
-	public void imprimeJogo() {
-		
+	public void imprimePecas(Jogo jg) {
+		System.out.println(jg);
 	}
 }
