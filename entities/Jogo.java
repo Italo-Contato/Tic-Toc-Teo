@@ -58,7 +58,7 @@ public class Jogo {
 		if (pecas[0][1] == "X" && pecas[1][1] == "X" && pecas[2][1] == "X") {
 			return 1;
 		}
-		if (pecas[1][2] == "X" && pecas[1][2] == "X" && pecas[1][2] == "X") {
+		if (pecas[1][0] == "X" && pecas[1][1] == "X" && pecas[1][2] == "X") {
 			return 1;
 		}
 
@@ -69,7 +69,7 @@ public class Jogo {
 		if (pecas[0][1] == "B" && pecas[1][1] == "B" && pecas[2][1] == "B") {
 			return 1;
 		}
-		if (pecas[1][2] == "B" && pecas[1][2] == "B" && pecas[1][2] == "B") {
+		if (pecas[1][0] == "B" && pecas[1][1] == "B" && pecas[1][2] == "B") {
 			return 1;
 		}
 		return 0;
