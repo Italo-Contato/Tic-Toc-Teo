@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Scanner;
+
 public class Jogo {
 	private String[][] pecas = new String[3][3];
 
@@ -12,34 +14,85 @@ public class Jogo {
 		}
 	}
 
-	public void xJoga() {
-		System.out.println();
+	public void xJoga(Scanner sc) {
 	}
 
 	public void bJoga() {
-
 	}
 
 	public int empate() {
 		// se der empate retorna 1
+
 		return 0;
 	}
 
 	public int vitoriaEmLinha() {
-		// se X vencer em linha retorna 2
-		// se nao, se B vencer em linha retorna 3
+		// se X vencer em linha retorna 1
+		if (pecas[0][0] == "X" && pecas[0][1] == "X" && pecas[0][2] == "X") {
+			return 1;
+		}
+		if (pecas[1][0] == "X" && pecas[1][1] == "X" && pecas[1][2] == "X") {
+			return 1;
+		}
+		if (pecas[2][0] == "X" && pecas[2][1] == "X" && pecas[2][2] == "X") {
+			return 1;
+		}
+		// se nao, se B vencer em linha retorna 2
+		if (pecas[0][0] == "B" && pecas[0][1] == "B" && pecas[0][2] == "B") {
+			return 2;
+		}
+		if (pecas[1][0] == "B" && pecas[1][1] == "B" && pecas[1][2] == "B") {
+			return 1;
+		}
+		if (pecas[2][0] == "B" && pecas[2][1] == "B" && pecas[2][2] == "B") {
+			return 1;
+		}
 		return 0;
 	}
 
 	public int vitoriaEmColuna() {
-		// se X vencer em coluna retorna 2
-		// se nao, se B vencer em coluna retorna 3
+		// se X vencer em coluna retorna 1
+		if (pecas[0][0] == "X" && pecas[1][0] == "X" && pecas[2][0] == "X") {
+			return 1;
+		}
+		if (pecas[0][1] == "X" && pecas[1][1] == "X" && pecas[2][1] == "X") {
+			return 1;
+		}
+		if (pecas[1][2] == "X" && pecas[1][2] == "X" && pecas[1][2] == "X") {
+			return 1;
+		}
+
+		// se nao, se B vencer em coluna retorna 2
+		if (pecas[0][0] == "B" && pecas[1][0] == "B" && pecas[2][0] == "B") {
+			return 1;
+		}
+		if (pecas[0][1] == "B" && pecas[1][1] == "B" && pecas[2][1] == "B") {
+			return 1;
+		}
+		if (pecas[1][2] == "B" && pecas[1][2] == "B" && pecas[1][2] == "B") {
+			return 1;
+		}
 		return 0;
 	}
 
-	public void vitoriaEmDiagonal() {
-		// se X vencer em diagonal retorna 2
-		// se nao, se B vencer em diagonal retorna 3
+	public int vitoriaEmDiagonal() {
+		// se X vencer em diagonal retorna 1
+		if (pecas[0][0] == "X" && pecas[1][1] == "X" && pecas[2][2] == "X") {
+			return 1;
+		}
+		if (pecas[0][2] == "X" && pecas[1][1] == "X" && pecas[2][0] == "X") {
+			return 1;
+		}
+
+		// se nao, se B vencer em diagonal retorna 2
+		if (pecas[0][0] == "B" && pecas[1][1] == "B" && pecas[2][2] == "B") {
+			return 2;
+		}
+		if (pecas[0][2] == "B" && pecas[1][1] == "B" && pecas[2][0] == "B") {
+			return 2;
+		}
+
+		return 1;
 	}
 
 	public String[][] getPecas() {
