@@ -27,7 +27,7 @@ public class Jogo {
 		int linha = sc.nextInt();
 		System.out.println("Coluna: ");
 		int coluna = sc.nextInt();
-		pecas[linha][coluna] = "X";
+		pecas[linha][coluna] = "B";
 	}
 
 	public int empate() {
