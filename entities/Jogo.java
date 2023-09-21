@@ -2,6 +2,8 @@ package entities;
 
 import java.util.Scanner;
 
+import entities.exception.JogoException;
+
 public class Jogo {
 	private String[][] pecas = new String[3][3];
 	double jogadas = 0.0;
@@ -14,20 +16,28 @@ public class Jogo {
 		}
 	}
 	public void xJoga(Scanner sc) {
+		try {
 		System.out.println("Linha: ");
 		int linha = sc.nextInt();
 		System.out.println("Coluna: ");
 		int coluna = sc.nextInt();
 		pecas[linha][coluna] = "X";
 		jogadas = jogadas + 0.5;
+		}catch(ArrayIndexOutOfBoundsException err) {
+			throw new JogoException("ERR: linha ou coluna inválida");
+		}
 	}
 
 	public void bJoga(Scanner sc) {
+		try {
 		System.out.println("Linha: ");
 		int linha = sc.nextInt();
 		System.out.println("Coluna: ");
 		int coluna = sc.nextInt();
 		pecas[linha][coluna] = "B";
+		}catch(ArrayIndexOutOfBoundsException err) {
+			throw new JogoException("Erro: Linha ou coluna inválida");
+		}
 	}
 
 	public int empate() {
