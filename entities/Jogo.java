@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Jogo {
 	private String[][] pecas = new String[3][3];
-
+	double jogadas = 0.0;
 	public Jogo() {
 		for (int i = 0; i < pecas.length; i++) {
 			// incia o jogo, cada "_" é um espaço vazio no jogo
@@ -13,13 +13,13 @@ public class Jogo {
 			}
 		}
 	}
-
 	public void xJoga(Scanner sc) {
 		System.out.println("Linha: ");
 		int linha = sc.nextInt();
 		System.out.println("Coluna: ");
 		int coluna = sc.nextInt();
 		pecas[linha][coluna] = "X";
+		jogadas = jogadas + 0.5;
 	}
 
 	public void bJoga(Scanner sc) {
@@ -31,7 +31,10 @@ public class Jogo {
 	}
 
 	public int empate() {
-		// se der empate retorna 1
+		// se der empate retorna 3
+		if(jogadas == 2.5) {
+			return 3;
+		}
 
 		return 0;
 	}
@@ -102,7 +105,7 @@ public class Jogo {
 			return 2;
 		}
 
-		return 1;
+		return 0;
 	}
 
 	public String[][] getPecas() {
