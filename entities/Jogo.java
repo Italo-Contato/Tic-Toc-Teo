@@ -15,9 +15,19 @@ public class Jogo {
 	}
 
 	public void xJoga(Scanner sc) {
+		System.out.println("Linha: ");
+		int linha = sc.nextInt();
+		System.out.println("Coluna: ");
+		int coluna = sc.nextInt();
+		pecas[linha][coluna] = "X";
 	}
 
-	public void bJoga() {
+	public void bJoga(Scanner sc) {
+		System.out.println("Linha: ");
+		int linha = sc.nextInt();
+		System.out.println("Coluna: ");
+		int coluna = sc.nextInt();
+		pecas[linha][coluna] = "X";
 	}
 
 	public int empate() {
